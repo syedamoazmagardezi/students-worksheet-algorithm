@@ -2,14 +2,27 @@ package main
 
 import "fmt"
 
+func fitness(candidate string) int {
+
+	count := 0
+	for i := 0; i < len(candidate); i++ {
+		if candidate[i] == '1' {
+			count++
+		}
+	}
+	return count
+}
+
 func main() {
-	massKg := 70.0
-	earthGravity := 9.8
-	marsFactor := 0.38
+	a, b := "1001", "0110"
 
-	earthWeight := massKg * earthGravity
-	marsWeight := earthWeight * marsFactor
+	child := a[:2] + b[2:]
 
-	fmt.Printf("Earth weight: %.1f N\n", earthWeight)
-	fmt.Printf("Mars weight: %.1f N\n", marsWeight)
+	mutated := child[:1] + "1" + child[2:]
+
+	fmt.Println("Parent A:", a)
+	fmt.Println("Parent B:", b)
+	fmt.Println("Crossover:", child)
+	fmt.Println("Mutation:", mutated)
+	fmt.Println("Fitness:", fitness(mutated))
 }
