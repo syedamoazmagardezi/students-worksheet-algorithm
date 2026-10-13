@@ -14,6 +14,8 @@ Boundary or invalid test: Try age = 0, mass = 0.0, and checkedIn = false. These 
 One assumption or limitation: The values are fixed in the code rather than entered by the user.
 What I changed in main.go: Added mass and checkedIn, then printed all four values in the required order.
 Why I believe the result is correct: The output contains each assigned value in the requested order, and the student ID keeps its leading zeros because it is a string.
+
+
 Exercise 2 --- Subtotal and Discount
 Story in my words: Calculate the cost of multiple items and subtract a discount.
 
@@ -39,6 +41,8 @@ What I changed in main.go: Calculated subtotal and total, then printed each with
 
 Why I believe the result is correct: Two items cost 18000 × 2 = 36000; subtracting 5000 gives 31000.
 
+
+
 Exercise 3 --- Check Whether One Number Is a Factor of Another
 Story in my words: Read two integers and determine whether x is a factor of y.
 Input(s) and their types: Two integers, x and y, read using fmt.Scan.
@@ -53,6 +57,8 @@ Boundary or invalid test: x = 0, x < 0, or y <= 0 should print invalid input.
 One assumption or limitation: Only positive integers are accepted, even though some mathematical definitions allow negative factors.
 What I changed in main.go: Added input validation and used the modulo operator % to test divisibility.
 Why I believe the result is correct: A remainder of zero means y is evenly divisible by x; invalid values are rejected before the modulo operation.
+
+
 Exercise 4 --- Population Calculation
 Story in my words: Calculate the final population after births, arrivals, deaths, and departures.
 Input(s) and their types: Fixed integer values: start = 1000, births = 20, arrivals = 5, deaths = 10, and departures = 4.
@@ -64,6 +70,8 @@ Boundary or invalid test: If all changes are zero, the ending population equals 
 One assumption or limitation: All population changes are assumed to be non-negative counts, and the starting population is assumed valid.
 What I changed in main.go: Calculated end using additions for births and arrivals and subtractions for deaths and departures.
 Why I believe the result is correct: Each increase is added and each decrease is subtracted, giving 1011.
+
+
 Exercise 5 --- Calculate the Next Sequence Terms
 Story in my words: Starting with the first two terms, calculate the next three terms by adding the previous two terms.
 Input(s) and their types: Fixed integers first = 5 and second = 3.
@@ -75,6 +83,8 @@ Boundary or invalid test: Starting with zero values gives zero for each next ter
 One assumption or limitation: The sequence rule is that each new term equals the sum of the two immediately preceding terms.
 What I changed in main.go: Added variables for the third, fourth, and fifth terms and printed them.
 Why I believe the result is correct: Each term is calculated from the two terms immediately before it: 5 + 3 = 8, 3 + 8 = 11, and 8 + 11 = 19.
+
+
 Exercise 6 --- Weight on Earth and Mars
 Story in my words: Calculate the weight of a 70 kg person on Earth and on Mars, in Newtons.
 
@@ -99,6 +109,9 @@ One assumption or limitation: Mars gravity is represented as 0.38 times Earth's 
 What I changed in main.go: Calculated both weights and used fmt.Printf with %.1f to format them.
 
 Why I believe the result is correct: 70 × 9.8 = 686.0; 686.0 × 0.38 = 260.68, which rounds to 260.7.
+
+
+
 
 Exercise 7 --- Fitness, Crossover, and Mutation
 Story in my words: Use 4-character binary strings to count the number of ones, combine two parents, and mutate one character.
@@ -126,6 +139,9 @@ What I changed in main.go: Implemented the fitness loop, built the crossover chi
 
 Why I believe the result is correct: The crossover combines 10 and 10 to make 1010; changing its second character produces 1110, which contains three ones.
 
+
+
+
 Exercise 8 --- Check Whether One Number Is the Cube of Another
 Story in my words: Read two integers and check whether the second number equals the first number multiplied by itself three times.
 Input(s) and their types: Two integers, x and y, read using fmt.Scan.
@@ -140,6 +156,8 @@ Boundary or invalid test: 0 0 returns true. The code does not validate malformed
 One assumption or limitation: The input values fit safely within Go's int range when cubed.
 What I changed in main.go: Replaced the placeholder output with an if statement checking x*x*x == y.
 Why I believe the result is correct: The condition directly compares the cube of x with y; negative cubes are handled correctly too.
+
+
 Exercise 9 --- Advanced Genetic Algorithm
 Story in my words: Use a population of 4-bit candidates and a genetic algorithm to try to find the best candidate, 1111.
 
@@ -170,6 +188,10 @@ One assumption or limitation: A genetic algorithm is randomized and does not gua
 What I changed in main.go: Added functions for random candidate generation, fitness, parent selection, crossover, and mutation, then added the generation loop and stopping condition.
 
 Why I believe the result is correct: Fitness is the number of ones in a 4-bit string, so the maximum possible score is 4. The program reports the best score found in each generation and stops when that score reaches 4 or the generation limit is reached.
+
+
+
+
 
 My mini-defense (2 minutes)
 Why did I choose these types? I used int for whole-number counts, float64 for decimal measurements, bool for true/false status, and string for text such as a student ID. A string preserves leading zeros.
